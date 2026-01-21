@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjs_cook_wiki=self.webpackChunkjs_cook_wiki||[]).push([[742],{7093(s){s.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"default"}')}}]);

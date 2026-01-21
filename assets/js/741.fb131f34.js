@@ -1,0 +1,1 @@
+(self.webpackChunkjs_cook_wiki=self.webpackChunkjs_cook_wiki||[]).push([[741],{5741(){}}]);
