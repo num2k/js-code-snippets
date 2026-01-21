@@ -1,7 +1,6 @@
 ---
 id: deep-clone
 title: 객체 깊은 복사(Deep Clone)
-sidebar_position: 2
 ---
 
 얕은 복사로는 중첩 객체가 공유되기 때문에 예상치 못한 변경이 발생할 수 있습니다. 깊은 복사를 사용해 안전하게 복제합니다.

@@ -1,7 +1,6 @@
 ---
 id: debounce
 title: 디바운스(debounce) 구현
-sidebar_position: 1
 ---
 
 검색 입력창과 같이 잦은 이벤트를 일정 시간으로 묶어 호출 횟수를 줄일 때 디바운스를 사용합니다.

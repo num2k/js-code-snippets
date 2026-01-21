@@ -1,7 +1,6 @@
 ---
 id: array-flatten
 title: 다차원 배열 평탄화(flatten)
-sidebar_position: 4
 ---
 
 중첩 배열을 단일 차원으로 평탄화합니다.
