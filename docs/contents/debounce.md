@@ -14,20 +14,30 @@ sidebar_position: 1
 
 ## 구현 코드
 
-```ts showLineNumbers
-export function debounce<T extends (...args: any[]) => void>(fn: T, wait = 300) {
-  let timer: ReturnType<typeof setTimeout> | null = null;
-  return (...args: any[]) => {
+```js showLineNumbers
+function debounce(fn, wait = 300) {
+  let timer = null;
+
+  const debounced = function(...args) {
     if (timer) clearTimeout(timer);
-    timer = setTimeout(() => fn(...(args as Parameters<T>)), wait);
+    timer = setTimeout(() => {
+      fn.apply(this, args); // this 바인딩 유지
+    }, wait);
   };
+
+  // 대기 중인 작업을 취소할 수 있는 기능
+  debounced.cancel = () => {
+    if (timer) clearTimeout(timer);
+  };
+
+  return debounced;
 }
 ```
 
 ## 사용 예
 
-```ts showLineNumbers
-const onInput = debounce((keyword: string) => {
+```js showLineNumbers
+const onInput = debounce((keyword) => {
   console.log('검색:', keyword);
 }, 400);
 

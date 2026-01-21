@@ -8,25 +8,25 @@ sidebar_position: 4
 
 ## 간단 구현 (단계 지정)
 
-```ts showLineNumbers
-export function flatten<T>(arr: any[], depth = 1): T[] {
+```js showLineNumbers
+function flatten(arr, depth = 1) {
   return depth > 0
-    ? arr.reduce<any[]>((acc, v) => acc.concat(Array.isArray(v) ? flatten<T>(v, depth - 1) : v), [])
-    : (arr as T[]).slice();
+    ? arr.reduce((acc, v) => acc.concat(Array.isArray(v) ? flatten(v, depth - 1) : v), [])
+    : arr.slice();
 }
 ```
 
 ## 무한 평탄화
 
-```ts showLineNumbers
-export function flattenDeep<T>(arr: any[]): T[] {
-  return arr.flat ? (arr.flat(Infinity) as T[]) : flatten<T>(arr, Number.POSITIVE_INFINITY);
+```js showLineNumbers
+function flattenDeep(arr) {
+  return arr.flat ? (arr.flat(Infinity)) : flatten(arr, Number.POSITIVE_INFINITY);
 }
 ```
 
 ## 사용 예
 
-```ts showLineNumbers
+```js showLineNumbers
 flatten([1, [2, [3, 4]], 5], 2); // [1, 2, 3, 4, 5]
 flattenDeep([1, [2, [3, 4]], 5]); // [1, 2, 3, 4, 5]
 ```

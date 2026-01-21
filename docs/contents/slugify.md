@@ -8,22 +8,27 @@ sidebar_position: 3
 
 ## 간단 구현
 
-```ts showLineNumbers
-export function slugify(input: string): string {
+```js showLineNumbers
+function slugify(input) {
   return input
-    .normalize('NFKD') // 분해 정규화 (악센트 분리)
-    .replace(/[\u0300-\u036f]/g, '') // 결합 문자 제거
+    .toString()
     .toLowerCase()
-    .replace(/[^a-z0-9\u3131-\u318E\uAC00-\uD7A3\s-]/g, '') // 영문/숫자/한글만 남기기
     .trim()
-    .replace(/\s+/g, '-') // 공백 -> 하이픈
-    .replace(/-+/g, '-');  // 하이픈 연속 -> 하나
+    // 1. 한글, 영문, 숫자만 남기고 나머지 특수문자 제거
+    // \u1100-\u11FF (초성), \u3130-\u318F (자모), \uAC00-\uD7AF (완성형)
+    .replace(/[^a-z0-9가-힣\s-]/g, '')
+    // 2. 공백을 하이픈으로 변경
+    .replace(/[\s_]+/g, '-')
+    // 3. 하이픈이 중복되면 하나로 축소
+    .replace(/-+/g, '-')
+    // 4. 양 끝에 남은 하이픈 제거
+    .replace(/^-+|-+$/g, '');
 }
 ```
 
 ## 사용 예
 
-```ts showLineNumbers
+```js showLineNumbers
 slugify('Hello World!') // 'hello-world'
 slugify('자바스크립트 팁 모음') // '자바스크립트-팁-모음'
 ```
