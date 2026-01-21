@@ -14,3 +14,7 @@ yarn-error.log*
 # Docusaurus build output
 /build
 /.docusaurus
+
+# macOS
+.DS_Store
+**/.DS_Store
