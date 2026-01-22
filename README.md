@@ -25,11 +25,7 @@
 js-code-snippets/
 ├─ docs/                 # 모든 문서(.md) — 사이트 루트('/')로 라우팅됨
 │  ├─ index.md           # 소개 페이지 (루트)
-│  └─ snippets/          # 예시 스니펫 모음
-│     ├─ debounce.md
-│     ├─ deep-clone.md
-│     ├─ slugify.md
-│     └─ array-flatten.md
+│  └─ contents/          # 예시 스니펫 모음
 ├─ sidebars.ts           # 자동 생성 사이드바 설정
 ├─ docusaurus.config.ts  # Docusaurus 설정 (URL, baseUrl, 검색 플러그인 등)
 ├─ src/
@@ -41,7 +37,7 @@ js-code-snippets/
 
 ## 로컬 개발
 
-사전 준비: Node.js 18+ (권장 LTS)
+사전 준비: Node.js 20+ (권장 LTS)
 
 ```bash
 npm ci
