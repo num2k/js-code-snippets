@@ -22,7 +22,11 @@ const config: Config = {
   },
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn'
+    }
+  },
 
   presets: [
     [
@@ -48,6 +52,7 @@ const config: Config = {
   ],
 
   themes: [
+    '@docusaurus/theme-live-codeblock',
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {
