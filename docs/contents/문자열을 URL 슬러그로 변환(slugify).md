@@ -5,7 +5,7 @@ title: 문자열을 URL 슬러그로 변환(slugify)
 
 문자열을 소문자/하이픈 형태의 URL-safe 슬러그로 변환합니다. 한글도 영문자로 치환하거나 제거 규칙을 적용할 수 있습니다.
 
-## 간단 구현
+## 구현
 
 ```js showLineNumbers
 function slugify(input) {
