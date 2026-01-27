@@ -1,0 +1,16 @@
+{
+  "name": "JS Code Snippets",
+  "short_name": "JS Snippets",
+  "theme_color": "#e6ca16",
+  "background_color": "#1b1b1d",
+  "display": "standalone",
+  "scope": "/js-code-snippets/",
+  "start_url": "/js-code-snippets/",
+  "icons": [
+    {
+      "src": "img/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
